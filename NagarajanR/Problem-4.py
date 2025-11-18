@@ -1,11 +1,12 @@
-def count_multiples(numbers):
-    multiples = {i: 0 for i in range(1, 10)}
-    for num in numbers:
-        for i in range(1, 10):
-            if num % i == 0:
-                multiples[i] += 1
-    return multiples
-
-# Example usage
 input_list = [1, 2, 8, 9, 12, 46, 76, 82, 15, 20, 30]
-print(count_multiples(input_list))  # Output: {1: 11, 2: 8, 3: 4, 4: 4, 5: 3, 6: 2, 7: 0, 8: 1, 9: 1}
+divisors = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+result = {}
+for div in divisors:
+    count = 0
+    for num in input_list:
+        if num % div == 0:
+            count += 1
+    result[div] = count
+
+print(result)
