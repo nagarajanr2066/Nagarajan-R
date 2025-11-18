@@ -1,6 +1,5 @@
 # NagarajanR
 
-This repository contains solutions to 4 programming problems implemented in Python.
 
 ## Problems
 
@@ -9,10 +8,4 @@ This repository contains solutions to 4 programming problems implemented in Pyth
 3. **Problem-3**: Generate a series of odd numbers up to the input number, but with different logic.
 4. **Problem-4**: Count how many numbers in a list are multiples of each number from 1 to 9.
 
-## Language
 
-- Python 3
-
-## Comments
-
-Each file includes comments explaining the code and example usage.
