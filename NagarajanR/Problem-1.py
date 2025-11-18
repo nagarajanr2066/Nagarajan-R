@@ -1,24 +1,34 @@
-class Calculator:
-    def __init__(self, a, b, operation):
-        self.a = a
-        self.b = b
-        self.operation = operation
-
-    def calculate(self):
-        if self.operation == 'addition':
-            return self.a + self.b
-        elif self.operation == 'subtraction':
-            return self.a - self.b
-        elif self.operation == 'multiplication':
-            return self.a * self.b
-        elif self.operation == 'division':
-            if self.b != 0:
-                return self.a / self.b
+    def calculate(self, a, b, operation):
+        # Normalizing string to lower case for easier matching
+        op = operation.lower()
+        
+        if op == "add" or op == "+":
+            return a + b
+        elif op == "subtract" or op == "-":
+            return a - b
+        elif op == "multiply" or op == "*":
+            return a * b
+        elif op == "divide" or op == "/":
+            if b != 0:
+                return a / b
             else:
-                return "Division by zero error"
+                return "Error: Division by zero"
         else:
             return "Invalid operation"
 
-# Example usage
-calc = Calculator(10.5, 2.5, 'addition')
-print(calc.calculate())  # Output: 13.0
+if __name__ == "__main__":
+    # Inputs
+    try:
+        num_a = float(input("Enter number a: "))
+        num_b = float(input("Enter number b: "))
+        op_type = input("Enter type of operation (+, -, *, /): ")
+
+        # Object Instantiation
+        my_calc = Calculator()
+        
+        # Method Call
+        result = my_calc.calculate(num_a, num_b, op_type)
+        print(f"Result: {result}")
+        
+    except ValueError:
+        print("Error: Please enter valid numbers for a and b.")
